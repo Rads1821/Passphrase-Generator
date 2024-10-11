@@ -1,23 +1,18 @@
-import random
+diceWords = []
 
-def load_word_list(file_path):
-   word_list = {}
-   with open(file_path, 'r') as file:
-       for line in file:
-           split_line = line.strip().split(maxsplit=1)
-           if len(split_line) == 2:  
-               dice_rolls, word = split_line
-               word_list[dice_rolls] = word
-   return word_list
+import random 
+rolls = []
 
-def generate_dice_roll():
-   return ''.join(str(random.randint(1, 6)) for _ in range(5))
+f = open ("DiceWare.txt"r"")
+for f in x:
+    print (x)
+key = x[:5]
+value = x[6:]
+diceWords[key]=value
 
-def generate_passphrase(word_list, num_words=6):
-   return [word_list[generate_dice_roll()] for _ in range(num_words)]
+print(diceWords[i in range(5): roll ==random.randint(1, 6) rolls.append(roll) print (rolls)])
 
-def display_passphrase(passphrase):
-   print("Current Passphrase: " + ' '.join(passphrase))
+# spencer helped me with this part, he said this is how I fix the words
 
 def add_word(passphrase, word_list):
    position = int(input("Enter position to add a new word (1-based index): ")) - 1
@@ -45,44 +40,6 @@ def alter_word(passphrase):
    print("1. Capitalize\n2. Substitute Characters\n3. Add a Number")
    choice = input("Choose an alteration: ")
 
-   if choice == '1':
-       passphrase[position] = capitalize_word(word)
-   elif choice == '2':
-       passphrase[position] = substitute_characters(word)
-   elif choice == '3':
-       passphrase[position] = add_number(word)
 
-def revert_word(passphrase, original_words):
-   position = int(input("Enter the position of the word to revert (1-based index): ")) - 1
-   passphrase[position] = original_words[position]
 
-def user_interface():
-   word_list = load_word_list('DiceWare.txt')
-   passphrase = generate_passphrase(word_list)
-   original_words = passphrase.copy()
-
-   display_passphrase(passphrase)
-
-   while True:
-       print("Options:")
-       print("1. Add a word")
-       print("2. Remove a word")
-       print("3. Alter a word")
-       print("4. Revert a word")
-       print("5. Exit")
-       choice = input("Choose an option: ")
-
-       if choice == '1':
-           add_word(passphrase, word_list)
-       elif choice == '2':
-           remove_word(passphrase)
-       elif choice == '3':
-           alter_word(passphrase)
-       elif choice == '4':
-           revert_word(passphrase, original_words)
-       elif choice == '5':
-           break
-
-       display_passphrase(passphrase)
-
-user_interface()
+#For some reason this code didnt run I didnt understand why, if I need to do this again I can I just wasnt very comfindent with this topic
